@@ -56,6 +56,19 @@ Program for flipflops  and verify its truth table in quartus using Verilog progr
 Developed by: 
 RegisterNumber:  
 */
+```
+module counter(clk,A);
+input clk;
+output reg [0:3]A;
+always@(posedge clk)
+begin
+	A[0]=(((~A[2])&(~A[3])&(~A[1]))^A[0]);
+	A[1]=(((~A[2])&(~A[3]))^A[1]);
+	A[2]=(~A[3])^A[2];
+	A[3]=1^A[3];
+end
+endmodule
+```
 
 
 
@@ -63,6 +76,8 @@ RegisterNumber:
 
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+
+![countrtl](https://github.com/Bala1511/Exp-7-Synchornous-counters-/assets/118680410/a8519484-2ad5-4fb5-8608-e756473acfd0)
 
 
 
@@ -76,6 +91,7 @@ RegisterNumber:
 
 
 
+![counterwave](https://github.com/Bala1511/Exp-7-Synchornous-counters-/assets/118680410/d9bdac69-a999-4037-9968-22048a360d0c)
 
 
 ### TRUTH TABLE 
