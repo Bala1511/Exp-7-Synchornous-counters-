@@ -53,19 +53,34 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: BALA MURUGAN P
+RegisterNumber: 212222230017 
 */
 ```
-module counter(clk,A);
+module Counters(clk,A);
 input clk;
-output reg [0:3]A;
+output reg [3:0]A;
+always @(posedge clk)
+begin
+	A[3]=(((A[0])&(A[1])&(A[2]))^A[3]);
+	A[2]=(((A[0])&(A[1]))^A[2]);
+	A[1]=(A[0])^A[1];
+	A[0]=A[0]^1;
+end
+endmodule
+
+```
+
+```
+module count(clk,A);
+input clk;
+output reg [3:0]A;
 always@(posedge clk)
 begin
-	A[0]=(((~A[2])&(~A[3])&(~A[1]))^A[0]);
-	A[1]=(((~A[2])&(~A[3]))^A[1]);
-	A[2]=(~A[3])^A[2];
-	A[3]=1^A[3];
+	A[3]=(((~A[0])&(~A[1])&(~A[2]))^A[3]);
+	A[2]=(((~A[0])&(~A[1]))^A[2]);
+	A[1]=(~A[0])^A[1];
+	A[0]=(~A[0])^1;
 end
 endmodule
 ```
@@ -74,14 +89,13 @@ endmodule
 
 
 
-
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 
-![countrtl](https://github.com/Bala1511/Exp-7-Synchornous-counters-/assets/118680410/a8519484-2ad5-4fb5-8608-e756473acfd0)
 
 
 
-
+![count2rtl](https://github.com/Bala1511/Exp-7-Synchornous-counters-/assets/118680410/3c06c21d-3c68-47ec-8b5a-396d82cbd101)
+![count3rtl](https://github.com/Bala1511/Exp-7-Synchornous-counters-/assets/118680410/16660380-06dd-4c40-949b-a250412d31d4)
 
 
 
@@ -90,9 +104,9 @@ endmodule
 ### TIMING DIGRAMS FOR COUNTER  
 
 
+![count2wave](https://github.com/Bala1511/Exp-7-Synchornous-counters-/assets/118680410/7370a7fe-b59e-49c1-b393-3aa3aa45a1a7)
 
-![counterwave](https://github.com/Bala1511/Exp-7-Synchornous-counters-/assets/118680410/d9bdac69-a999-4037-9968-22048a360d0c)
-
+![count3wave](https://github.com/Bala1511/Exp-7-Synchornous-counters-/assets/118680410/570c3ee0-9a62-4d0f-95f1-78870f1e135a)
 
 ### TRUTH TABLE 
 
