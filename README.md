@@ -110,9 +110,13 @@ endmodule
 
 ### TRUTH TABLE 
 
+![WhatsApp Image 2023-06-01 at 11 44 17 AM](https://github.com/Bala1511/Exp-7-Synchornous-counters-/assets/118680410/0a033bc6-01e9-446c-93b8-577002a53b60)
 
 
 
+![WhatsApp Image 2023-06-01 at 11 39 42 AM](https://github.com/Bala1511/Exp-7-Synchornous-counters-/assets/118680410/dede6406-e5a5-43f4-98df-5fa584f819b0)
 
 
 ### RESULTS 
+
+
